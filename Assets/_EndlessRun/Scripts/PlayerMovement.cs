@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public int speed;
     public int turnSpeed;
     private int desiredLane = 1; //Posisi Laning (0 = Left, 1 = Mid, 2 = Right)
+
+    public bool isGrounded;
+    public float jumpForce = 20.0f;
+    private float gravity = 12.0f;
+    private float verticalVelocity;
+    Rigidbody rb;
 
     //Swipe Variabel
     private Vector2 fingerDown;
@@ -17,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public float SWIPE_THRESHOLD = 20f;
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -35,6 +42,37 @@ public class PlayerMovement : MonoBehaviour
             MoveLane(true);
             Debug.Log("Right");
         }
+        //====================================================================BUG====================================================================
+
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    //Go Up
+        //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        //}
+
+        //Calculate Jump
+
+        //if (isGrounded) //if Ground
+        //{
+        //    verticalVelocity = -0.1f;
+        //    if (Input.GetKeyDown(KeyCode.UpArrow))
+        //    {
+        //        //Jump
+        //        verticalVelocity = jumpForce;
+        //        isGrounded = false;
+        //    }
+        //}
+        //else
+        //{
+        //    verticalVelocity -= (gravity * 3 * Time.deltaTime);
+
+        //    //Fast Falling Mechanic
+        //    //if (Input.GetKeyDown(KeyCode.DownArrow))
+        //    //{
+        //    //    verticalVelocity = -jumpForce;
+        //    //}
+        //}
+        //====================================================================BUG====================================================================
 
         //Detect Swipe
         foreach (Touch touch in Input.touches)
@@ -79,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         //Integrate Player Position
         //transform.Translate(Vector3.forward / speedForce);
         Vector3 moveVector = Vector3.zero;
+        moveVector.y = verticalVelocity;
         moveVector.x = (targetPosition - transform.position).x * turnSpeed;
 
         moveVector.z = speed;
@@ -179,5 +218,18 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Swipe Right");
         MoveLane(true);
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+
+        if (col.gameObject.tag == "Obstacle")
+        {
+            SceneManager.LoadScene("Main");
+        }
     }
 }

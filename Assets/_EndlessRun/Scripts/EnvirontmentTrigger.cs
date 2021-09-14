@@ -15,7 +15,7 @@ public class EnvirontmentTrigger : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         terrain.Spawn();
-        Destroy(gameObject, 3);
+        Destroy(gameObject, 5);
     }
 
     // Update is called once per frame

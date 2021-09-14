@@ -8,7 +8,7 @@ public class EnvirontmentSpawn : MonoBehaviour
     Vector3 nextSpawnPoint;
     void Start()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
             Spawn();
         }
