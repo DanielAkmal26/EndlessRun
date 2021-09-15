@@ -8,9 +8,11 @@ public class PMovement : MonoBehaviour
 {
     Rigidbody rb;
 
-    bool alive = true;
+    private GameManager GMScript;
 
-    public Transform player;
+    public float timer = 0.0f;
+    //private bool increment = true;
+    bool alive = true;
 
     private const float LANE_DISTANCE = 3.2f;
     //private const float TURN_SPEED = 0.05f;
@@ -30,17 +32,33 @@ public class PMovement : MonoBehaviour
     public float speed = 50.0f;
     public int turnSpeed;
     private int desiredLane = 1; //Posisi Laning (0 = Left, 1 = Mid, 2 = Right)
+
+    public int ChancePlay = 1;
+
+    [Header("Debuff Applier")]
+    public GameObject diz;
     // Start is called before the first frame update
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
+
+        GMScript = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        float seconds = timer % 60;
+
+        if (timer > 30)
+        {
+            speed += 2;
+            timer = 0;
+        }
+
         if (!alive)
         {
             return;
@@ -147,8 +165,6 @@ public class PMovement : MonoBehaviour
             //    transform.forward = Vector3.Lerp(transform.forward, dir, TURN_SPEED);
             //}
         }
-
-
     }
 
     //public void GroundedYes()
@@ -278,7 +294,45 @@ public class PMovement : MonoBehaviour
     {
         if (col.gameObject.tag == "Obstacle")
         {
-            //SceneManager.LoadScene("Main");
+            Time.timeScale = 0;
+            GMScript.GameOver();
         }
+        if (ChancePlay == 1)
+        {
+            if (col.gameObject.tag == "ObstacleLeft")
+            {
+                MoveLane(false);
+                ChancePlay -= 1;
+                diz.SetActive(true);
+                StartCoroutine(Dizzy());
+            }
+            if (col.gameObject.tag == "ObstacleRight")
+            {
+                MoveLane(true);
+                ChancePlay -= 1;
+                diz.SetActive(true);
+                StartCoroutine(Dizzy());
+            }
+        }
+        else
+        {
+            if (col.gameObject.tag == "ObstacleLeft")
+            {
+                Time.timeScale = 0;
+                GMScript.GameOver();
+            }
+            if (col.gameObject.tag == "ObstacleRight")
+            {
+                Time.timeScale = 0;
+                GMScript.GameOver();
+            }
+        }
+        
+    }
+    public IEnumerator Dizzy()
+    {
+        yield return new WaitForSeconds(3f);
+        diz.SetActive(false);
+        ChancePlay = 1;
     }
 }

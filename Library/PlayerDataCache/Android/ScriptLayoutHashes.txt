@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-W:/01. Project/_Game Dev/_EndlessRunner (MNC)/git/EndRun3.apk
+W:/01. Project/_Game Dev/_EndlessRunner (MNC)/git/EndRun4.apk
 SceneListBegin?
 Assets/_EndlessRun/Scene/Main.unity
 SceneListEnd?
@@ -197,7 +197,7 @@ fe10de86e42ce80dc24cf76ac1c87c2a Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
-f2c3e6e93c6549a4b5120bcda3215419 Assembly-CSharp.dll:.GameManager
+42bd7ccaf8ef6070b5ad03c6b6dfda9b Assembly-CSharp.dll:.GameManager
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 2ce2187bbae6f802011f568630bd3d1f Cinemachine.dll:Cinemachine.CinemachineOrbitalTransposer
 7ca765ad7969aae95e8011264b9c4046 Cinemachine.dll:Cinemachine.CinemachineTriggerAction
@@ -206,7 +206,7 @@ bd543bad7f9f6262f10595aadb130d22 Cinemachine.dll:Cinemachine.CinemachineComposer
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 204ea02909ea3f738dafe3ff633d2a93 Cinemachine.dll:Cinemachine.CinemachineTrackedDolly
 71bb6a6b6c8f052f948db64c7dd3ca4f Cinemachine.dll:Cinemachine.CinemachinePipeline
-7f43bb8c245b122fc697ae0b0be12412 Assembly-CSharp.dll:.PlayerMovement
+03106c429847c1e7fe036c5ec2bdac36 Assembly-CSharp.dll:.PlayerMovement
 694d20920c0e41f567e119f7159a3644 Cinemachine.dll:Cinemachine.CinemachinePath
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 56df1fa7cea034df9863fe5a24200a32 Cinemachine.dll:Cinemachine.CinemachineTargetGroup
@@ -261,6 +261,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 6ff1c52123c50b3d73f35cd0e2e65dfd Cinemachine.dll:Cinemachine.CinemachineSmoothPath
 71bb6a6b6c8f052f948db64c7dd3ca4f Cinemachine.dll:Cinemachine.CinemachineHardLookAt
 71bb6a6b6c8f052f948db64c7dd3ca4f Cinemachine.dll:Cinemachine.CinemachineInputProvider
+e103171a1c24e26fd47f31b42ef433ed Assembly-CSharp.dll:.PMovement
 ffd3ed4fcd23b3e7745287c99a637247 Cinemachine.dll:Cinemachine.Cinemachine3rdPersonAim
 5e84370a36252d6aa37d6a7bd37710f7 Cinemachine.dll:Cinemachine.Cinemachine3rdPersonFollow
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
@@ -304,6 +305,7 @@ fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBe
 1351a1bf2c4086539cf0063006375478 Cinemachine.dll:Cinemachine.CinemachineBrain
 dbfb4270852b0008a423a7418d9de4cf Cinemachine.dll:Cinemachine.CinemachineHardLockToTarget
 b5c3dbcb94925c8b595ad16a62b44788 Cinemachine.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.CapsulePickup
 2792936179724025482dc04d68a47ca7 Cinemachine.dll:Cinemachine.CinemachineClearShot
 42404ddba837514c0cef10dd4371a969 Assembly-CSharp.dll:.EnvirontmentSpawn
 0077fc8e4fbae67f80e80ebd534de5a0 Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
@@ -339,4 +341,3 @@ fe10de86e42ce80dc24cf76ac1c87c2a Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
-22cb47105f40ad105b572edf092f6d97 Assembly-CSharp.dll:.PMovement

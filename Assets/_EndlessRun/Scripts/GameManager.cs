@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public GameObject mainUI;
     public GameObject GameUI;
     public GameObject PauseUI;
+    public GameObject GameOverUI;
+    public Text gameOverText;
+    public Text BuffText;
     private int score;
     public Text scoreText;
     public Animator cameraAnim;
@@ -24,7 +27,12 @@ public class GameManager : MonoBehaviour
     public Slider sfxSlider;
     public Slider bgmSlider;
     public AudioSource coinPickup;
+    public AudioSource capsulePickup;
     public AudioSource BGMMusic;
+
+    [Header("Buff Applier")]
+    public bool DoubleCoin = false;
+
     // Start is called before the first frame update
 
     void Start()
@@ -42,7 +50,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (DoubleCoin == true)
+        {
+            StartCoroutine(DoubleCoinTimer());
+        }
+    }
+
+    public IEnumerator DoubleCoinTimer()
+    {
+        yield return new WaitForSeconds(2.5f);
+        DoubleCoin = false;
+        BuffText.text = "..";
     }
 
     public void gotoLobby()
@@ -81,6 +99,20 @@ public class GameManager : MonoBehaviour
         coinPickup.Play();
     }
 
+    public void CapsulePick()
+    {
+        capsulePickup.Play();
+        DoubleCoin = true;
+    }
+
+    public void scoreIncrementBuff()
+    {
+        BuffText.text = "Double Score";
+        score += 2;
+        scoreText.text = score.ToString();
+        coinPickup.Play();
+    }
+
     public void ChangeVolume()
     {
         coinPickup.volume = sfxSlider.value;
@@ -108,5 +140,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         PauseUI.SetActive(false);
+    }
+    public void GameOver()
+    {
+        GameOverUI.SetActive(true);
+        gameOverText.text = scoreText.text;
     }
 }

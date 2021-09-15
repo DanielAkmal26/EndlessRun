@@ -19,10 +19,21 @@ public class PickupCoin : MonoBehaviour
 
     public void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Player")
+        if (gmScript.DoubleCoin == true)
         {
-            Destroy(this.gameObject);
-            gmScript.scoreIncrement();
+            if (col.gameObject.tag == "Player")
+            {
+                Destroy(this.gameObject);
+                gmScript.scoreIncrementBuff();
+            }
+        }
+        else
+        {
+            if (col.gameObject.tag == "Player")
+            {
+                Destroy(this.gameObject);
+                gmScript.scoreIncrement();
+            }
         }
     }
 }

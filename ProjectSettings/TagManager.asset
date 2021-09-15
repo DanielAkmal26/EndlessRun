@@ -7,6 +7,10 @@ TagManager:
   - Obstacle
   - Ground
   - GM
+  - Score
+  - Capsule
+  - ObstacleLeft
+  - ObstacleRight
   layers:
   - Default
   - TransparentFX

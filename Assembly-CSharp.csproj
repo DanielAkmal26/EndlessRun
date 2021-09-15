@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_EndlessRun\Scripts\CapsulePickup.cs" />
     <Compile Include="Assets\_EndlessRun\Scripts\EnvirontmentSpawn.cs" />
     <Compile Include="Assets\_EndlessRun\Scripts\EnvirontmentTrigger.cs" />
     <Compile Include="Assets\_EndlessRun\Scripts\GameManager.cs" />

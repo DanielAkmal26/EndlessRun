@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isGrounded;
     public float jumpForce = 20.0f;
-    private float gravity = 12.0f;
-    private float verticalVelocity;
+    //private float gravity = 12.0f;
+    //private float verticalVelocity;
     Rigidbody rb;
 
     //Swipe Variabel
@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
         //Integrate Player Position
         //transform.Translate(Vector3.forward / speedForce);
         Vector3 moveVector = Vector3.zero;
-        moveVector.y = verticalVelocity;
+        //moveVector.y = verticalVelocity;
         moveVector.x = (targetPosition - transform.position).x * turnSpeed;
 
         moveVector.z = speed;
