@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DaNiMe
+  companyName: DanielAkmal
   productName: EndlessRunner
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -249,8 +249,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: W:/01. Project/_Game Dev/_EndlessRunner (MNC)/endless.keystore
+  AndroidKeyaliasName: daniel key
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
